@@ -1,6 +1,7 @@
 def draw_button(label_text, x, y, foreground_color, is_dark_mode, button_data)
   if is_dark_mode
     # darken foreground color for dark mode
+		dark_data = ButtonData.new(label_data, x, y, foreground_color - 10, '#111111')
     paint(label_text, x, y, foreground_color - 10, '#111111')
   else
     # lighten foreground color for non-dark mode
