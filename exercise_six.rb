@@ -14,11 +14,11 @@ class ButtonDisplay
 	end
 
 	def draw_dark_button
-		paint(button_data.label_text, button_data.x, button_data.y, button_data.foreground_color - 10, '#111111')
+		paint(button_data.label_text, button_data.x, button_data.y, button_data.foreground_color - 10, button_data.color_string)
 	end
 	
 	def draw_light_button
-		paint(button_data.label_text, button_data.x, button_data.y, button_data.foreground_color + 10, '#E0E0E0')
+		paint(button_data.label_text, button_data.x, button_data.y, button_data.foreground_color + 10, button_data.color_string)
 	end
 end
 
@@ -34,7 +34,18 @@ class ButtonData
 end
 
 class DarkModeButton < ButtonData
+	def initialize
+		super
+		@fore_color = fore_color -10
+		@color_string = '#111111'
+	end
+end
 
+class LightModeButton < ButtonData
+	def initialize
+		super
+		@fore_color = fore_color + 10
+		@color_string = 'E0E0E0'
 end
 
 
