@@ -8,6 +8,15 @@ def draw_button(is_dark_mode, button_data)
   end
 end
 
+def draw_dark_button
+
+end
+
+def draw_light_button
+
+end
+
+
 class ButtonData
 	attr_reader :label :x :y :fore_color :color_string
 	def initialize(label, x, y, fore_color, color_string)
@@ -18,6 +27,11 @@ class ButtonData
 		@color_string = color_string
 	end
 end
+
+class DarkModeButton < ButtonData
+
+end
+
 
 button_data = ButtonData.new(label, x, y, fore_color, color_string_here)
 draw_button(label_data, x, y, foreground_color, is_dark_mode, button_data)
