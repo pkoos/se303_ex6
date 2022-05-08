@@ -4,21 +4,7 @@ class ButtonDisplay
 	end
 
 	def draw_button
-		if is_dark_mode
-			# darken foreground color for dark mode
-			draw_dark_button
-		else
-			# lighten foreground color for non-dark mode
-			draw_light_button
-		end
-	end
-
-	def draw_dark_button
 		paint(button_data.label_text, button_data.x, button_data.y, button_data.foreground_color - 10, button_data.color_string)
-	end
-	
-	def draw_light_button
-		paint(button_data.label_text, button_data.x, button_data.y, button_data.foreground_color + 10, button_data.color_string)
 	end
 end
 
@@ -52,5 +38,4 @@ if dark_mode_flag
 	ButtonDisplay.new(DarkModeButton.new(label, x, y, fore_color).draw_button
 else
 	ButtonDisplay.new(LightModeButton.new(label, x, y, fore_color).draw_button
-	button_display.draw_button(dark_mode_flag, button_data)
 end
