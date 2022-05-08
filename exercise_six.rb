@@ -1,5 +1,5 @@
 class ButtonDisplay
-	def initialize(button_data, is_dark_mode)
+	def initialize(button_data)
 		...
 	end
 
@@ -34,25 +34,23 @@ class ButtonData
 end
 
 class DarkModeButton < ButtonData
-	def initialize
+	def initialize(color_string = '#111111')
 		super
 		@fore_color = fore_color -10
-		@color_string = '#111111'
+		@color_string = color_string
 	end
 end
 
 class LightModeButton < ButtonData
-	def initialize
+	def initialize(color_string = 'E0E0E0')
 		super
 		@fore_color = fore_color + 10
-		@color_string = 'E0E0E0'
+		@color_string color_string
 end
 
-
-button_data = ButtonData.new(label, x, y, fore_color, color_string_here)
-button_display = ButtonDisplay.new(button_data, is_dark_mode)
 if dark_mode_flag
-	draw_button(dark_mode_flag, button_data)
+	ButtonDisplay.new(DarkModeButton.new(label, x, y, fore_color).draw_button
 else
-	draw_button(dark_mode_flag, button_data)
+	ButtonDisplay.new(LightModeButton.new(label, x, y, fore_color).draw_button
+	button_display.draw_button(dark_mode_flag, button_data)
 end
