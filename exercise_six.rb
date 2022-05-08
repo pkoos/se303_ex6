@@ -34,8 +34,13 @@ class LightModeButton < ButtonData
 		@color_string color_string
 end
 
-if dark_mode_flag
-	ButtonDisplay.new(DarkModeButton.new(label, x, y, fore_color).draw_button
-else
-	ButtonDisplay.new(LightModeButton.new(label, x, y, fore_color).draw_button
+def set_button_display(dark_mode)
+	if dark_mode
+		ButtonDisplay.new(DarkModeButton.new(label, x, y, fore_color).draw_button
+	else
+		ButtonDisplay.new(LightModeButton.new(label, x, y, fore_color).draw_button
+	end
 end
+
+button_dark = set_button_display(true)
+button_light = set_button_disp(false)
